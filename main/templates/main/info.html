@@ -1,0 +1,37 @@
+{% extends "main/base.html" %}
+{% block title %}Target Info{% endblock %}
+ 
+{% block content %}
+				
+{% if target_proc %}
+	  <section id="section3">
+		<div class="container text-center mt-5 mb-5 section-container">
+		  <h2 class="font-weight-bold pb-5">Scanning <code>{{target.text}}</code>
+		  </code> right now.</h2>
+
+		  <p class="h5 text-muted">Just a little more time..</p>
+		  
+
+
+
+		  <div class="d-flex justify-content-center mt-5">
+			<div class="spinner-border" role="status">
+			  <span class="visually-hidden">Loading...</span>
+			</div>
+		  </div>
+		   
+		   
+		  </div>
+		</div>
+{% else %}
+	  <section id="section3">
+		<div class="container text-center mt-5 mb-5 section-container">
+		  <h2 class="font-weight-bold pb-5">Scanning for <code>{{target.text}}</code>
+		  </code> completed.</h2>
+
+		  </div>
+		</div>
+{% endif %}
+		<center><p class="h5 text-muted">To view the results, please navigate to the <a href="/results/">results page</a>.</p></center>
+  </section>
+{% endblock %}

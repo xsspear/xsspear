@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+{% block title %} XSScan {% endblock %}
+{% block content %}
+	  <section id="section3">
+    <div class="container text-center section-container">
+      <h2 class="font-weight-bold pb-5">Start scanning for <code>XSS vulnerabilities</code> right now</h2>
+	  
+      <form class="d-flex" role="search" method="post" action="/targets/" target="_blank">
+	  {% csrf_token %}
+        <input class="form-control me-2" type="search" placeholder="Enter your target url/subdomain..." aria-label="Search" name="new">
+       
+        <select id="inputState" class="form-select" name="type">
+          <option value="url" selected>URL</option>
+          <option value="subdomain">Subdomain</option>
+        </select>
+        <button class="btn btn-outline-primary" type="submit">Scan</button>
+      </form>
+	  
+      </div>
+    </div>
+  </section>
+{% endblock %}
